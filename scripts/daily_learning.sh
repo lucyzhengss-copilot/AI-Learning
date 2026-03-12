@@ -464,6 +464,7 @@ EOF
 generate_report() {
     local report_file="$TODAY_DIR/learning_report.md"
 
+    # 生成报告内容
     cat > "$report_file" << EOF
 # $(date +%Y-%m-%d) 学习报告
 
@@ -480,6 +481,7 @@ EOF
         grep -n "\[ \]" "$TODAY_DIR/learning_log.md" | sed 's/^/- /' >> "$report_file"
     fi
 
+    # 继续添加报告内容
     cat >> "$report_file" << EOF
 
 ## 学习建议
